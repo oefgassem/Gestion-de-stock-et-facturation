@@ -1,3 +1,3 @@
 <?php
-    include("../view/login_view.php")
+    include("../view/login_view.php");
 ?>

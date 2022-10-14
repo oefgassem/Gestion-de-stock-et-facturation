@@ -5,3 +5,8 @@
     include("../view/home_view.php");
     include("../view/layout/footer.php") ?>
 ?>
+<?php
+if (!isset($_SESSION['username'])){
+    header('location:login.php');
+}
+?>

@@ -36,49 +36,30 @@
                 </div>
                 <div class="col-lg-6">
                   <div class="card-body p-4 p-sm-5">
-                    <h5 class="card-title">Sign In</h5>
-                    <p class="card-text mb-5">See your growth and get consulting support!</p>
-                    <form class="form-body">
-                      <div class="d-grid">
-                        <a class="btn btn-white radius-30" href="javascript:;"><span class="d-flex justify-content-center align-items-center">
-                            <img class="me-2" src="../public/assets/images/icons/search.svg" width="16" alt="">
-                            <span>Sign in with Google</span>
-                          </span>
-                        </a>
-                      </div>
-                      <div class="login-separater text-center mb-4"> <span>OR SIGN IN WITH EMAIL</span>
-                        <hr>
-                      </div>
+                    <h5 class="card-title">Connexion</h5>
+                    <p class="card-text mb-5">Solution de gestion de stock et facturation</p>
+                    <form class="form-body" action="../controller/login_check.php" method="post">
                         <div class="row g-3">
                           <div class="col-12">
-                            <label for="inputEmailAddress" class="form-label">Email Address</label>
+                            <label for="inputEmailAddress" class="form-label">Adresse email</label>
                             <div class="ms-auto position-relative">
                               <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-envelope-fill"></i></div>
-                              <input type="email" class="form-control radius-30 ps-5" id="inputEmailAddress" placeholder="Email Address">
+                              <input type="email" class="form-control radius-30 ps-5" id="email" name="email" placeholder="Adresse email">
                             </div>
                           </div>
                           <div class="col-12">
-                            <label for="inputChoosePassword" class="form-label">Enter Password</label>
+                            <label for="inputChoosePassword" class="form-label">Mot de passe</label>
                             <div class="ms-auto position-relative">
                               <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-lock-fill"></i></div>
-                              <input type="password" class="form-control radius-30 ps-5" id="inputChoosePassword" placeholder="Enter Password">
+                              <input type="password" class="form-control radius-30 ps-5" id="password" name="password" placeholder="Mot de passe">
                             </div>
+                            <hr>
                           </div>
-                          <div class="col-6">
-                            <div class="form-check form-switch">
-                              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked="">
-                              <label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
-                            </div>
-                          </div>
-                          <div class="col-6 text-end">	<a href="authentication-forgot-password.html">Forgot Password ?</a>
-                          </div>
+                          
                           <div class="col-12">
                             <div class="d-grid">
-                              <button type="submit" class="btn btn-primary radius-30">Sign In</button>
+                              <button type="submit" class="btn btn-primary radius-30">Se connecter</button>
                             </div>
-                          </div>
-                          <div class="col-12">
-                            <p class="mb-0">Don't have an account yet? <a href="authentication-signup.html">Sign up here</a></p>
                           </div>
                         </div>
                     </form>
