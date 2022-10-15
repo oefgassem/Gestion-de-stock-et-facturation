@@ -1,7 +1,7 @@
 <?php
 
 // reception des données
-$username = $_POST['email'];
+$email = $_POST['email'];
 $password = $_POST['password'];
 
 
@@ -13,11 +13,11 @@ $data = new connect();
 
 $db=$data->db_connect();
 
-$check=user_check($db,$username,$password);
+$check=user_check($db,$email,$password);
 
 if($check){
     session_start();
-    $_SESSION['username']=$username;
+    $_SESSION['email']=$email;
     header('location:home.php');
 }
 else {

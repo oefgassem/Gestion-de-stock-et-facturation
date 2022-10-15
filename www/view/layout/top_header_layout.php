@@ -30,8 +30,8 @@
                        <div class="d-flex align-items-center">
                           <img src="https://via.placeholder.com/110X110" alt="" class="rounded-circle" width="54" height="54">
                           <div class="ms-3">
-                            <h6 class="mb-0 dropdown-user-name"><?php $_SESSION['username'] ?></h6>
-                            <small class="mb-0 dropdown-user-designation text-secondary">HR Manager</small>
+                            <h6 class="mb-0 dropdown-user-name"><?php echo $_SESSION['email'] ?></h6>
+                            <small class="mb-0 dropdown-user-designation text-secondary">Administrateur</small>
                           </div>
                        </div>
                      </a>
@@ -79,10 +79,10 @@
                     </li> -->
                     <li><hr class="dropdown-divider"></li>
                     <li>
-                      <a class="dropdown-item" href="authentication-signup-with-header-footer.html">
+                      <a class="dropdown-item" href="../../controller/logout.php">
                          <div class="d-flex align-items-center">
                            <div class=""><i class="bi bi-lock-fill"></i></div>
-                           <div class="ms-3"><span>Logout</span></div>
+                           <div class="ms-3"><span>Déconnexion</span></div>
                          </div>
                        </a>
                     </li>

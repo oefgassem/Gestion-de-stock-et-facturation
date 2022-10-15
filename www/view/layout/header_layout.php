@@ -28,7 +28,7 @@
   <link href="../public/assets/css/semi-dark.css" rel="stylesheet" />
   <link href="../public/assets/css/header-colors.css" rel="stylesheet" />
 
-  <title>Snacked - Bootstrap 5 Admin Template</title>
+  <title>Stock DZ - Logiciel de gestion de stock</title>
 </head>
 
 <body>
