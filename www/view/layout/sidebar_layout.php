@@ -27,11 +27,11 @@
                 <div class="menu-title">Articles</div>
               </a>
               <ul>
-                <li> <a href="widgets-static-widgets.html"><i class="bi bi-circle"></i>Créer article</a>
+                <li> <a href="../../controller/product_add.php"><i class="bi bi-circle"></i>Ajouter article</a>
                 </li>
-                <li> <a href="widgets-data-widgets.html"><i class="bi bi-circle"></i>Liste des articles</a>
+                <li> <a href="../../controller/product_list.php"><i class="bi bi-circle"></i>Liste des articles</a>
                 </li>
-                <li> <a href="widgets-data-widgets.html"><i class="bi bi-circle"></i>Catégories d'articles</a>
+                <li> <a href="../../controller/categories.php"><i class="bi bi-circle"></i>Catégories d'articles</a>
                 </li>
                 <li> <a href="widgets-data-widgets.html"><i class="bi bi-circle"></i>Liste des magasins</a>
                 </li>
