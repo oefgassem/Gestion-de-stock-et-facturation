@@ -31,7 +31,7 @@
                  <div class="col-lg-8 mx-auto">
                   <div class="card">
                     <div class="card-header py-3 bg-transparent"> 
-                       <h5 class="mb-0">Ajouter nouvel article</h5>
+                       <h5 class="mb-0">Ajouter un article</h5>
                       </div>
                     <div class="card-body">
                       <div class="border p-3 rounded">
@@ -50,15 +50,11 @@
                         </div>
                         <div class="col-12">
                           <label class="form-label">Description de l'article</label>
-                          <textarea class="form-control" placeholder="Full description" name ="proddesc" rows="4" cols="4"></textarea>
+                          <textarea class="form-control" placeholder="Description" name ="proddesc" rows="4" cols="4"></textarea>
                         </div>
                         <div class="col-12">
                           <label class="form-label">Images</label>
                           <input class="form-control" type="file" name="prodimg">
-                        </div>
-                        <div class="col-12">
-                          <label class="form-label">Tags</label>
-                          <input type="text" class="form-control" placeholder="Enter tags">
                         </div>
                         <div class="col-12">
                           <label class="form-label">Category</label>
@@ -84,16 +80,16 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-12">
+                        <!-- <div class="col-12">
                           <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
                               Publish on website
                             </label>
                           </div>
-                        </div>
+                        </div> -->
                         <div class="col-12">
-                          <button class="btn btn-primary px-4">Submit Item</button>
+                          <button class="btn btn-primary px-4">Enregistrer</button>
                         </div>
                       </form>
                       </div>

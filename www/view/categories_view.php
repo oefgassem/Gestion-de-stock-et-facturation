@@ -29,38 +29,38 @@
 
               <div class="card">
                 <div class="card-header py-3">
-                  <h6 class="mb-0">Add Product Category</h6>
+                  <h6 class="mb-0">Ajouter une catégorie</h6>
                 </div>
                 <div class="card-body">
                    <div class="row">
                      <div class="col-12 col-lg-4 d-flex">
                        <div class="card border shadow-none w-100">
                          <div class="card-body">
-                           <form class="row g-3">
+                           <form class="row g-3" method="POST" action="../controller/categorie_add_exec.php" enctype = "multipart/form-data">
                              <div class="col-12">
-                               <label class="form-label">Name</label>
-                               <input type="text" class="form-control" placeholder="Category name">
+                               <label class="form-label">Nom de la catégorie</label>
+                               <input type="text" class="form-control" placeholder="Category name" name="CATD">
                              </div>
-                             <div class="col-12">
+                             <!-- <div class="col-12">
                               <label class="form-label">Slug</label>
                               <input type="text" class="form-control" placeholder="Slug name">
-                            </div>
+                            </div> -->
                             <div class="col-12">
-                              <label class="form-label">Parent</label>
-                              <select class="form-select">
-                                <option>Fashion</option>
-                                <option>Electronics</option>
-                                <option>Furniture</option>
-                                <option>Sports</option>
+                              <label class="form-label">Catégorie parente</label>
+                              <select class="form-select" name="PARENT" type="number">
+                                <option value=NULL></option>
+                                <?php foreach ($rows as $key => $row) {?>
+                                <option value="<?php echo $row['id'] ?>"><?php echo $row['CATD'] ?></option>
+                                <?php } ?>
                               </select> 
                             </div>
                             <div class="col-12">
                               <label class="form-label">Description</label>
-                              <textarea class="form-control" rows="3" cols="3" placeholder="Product Description"></textarea>
+                              <textarea class="form-control" rows="6" cols="3" placeholder="Description" name="DESCR"></textarea>
                             </div>
                             <div class="col-12">
                               <div class="d-grid">
-                                <button class="btn btn-primary">Add Category</button>
+                                <button class="btn btn-primary">Ajouter catégorie</button>
                               </div>
                             </div>
                            </form>
@@ -76,21 +76,20 @@
                                  <tr>
                                    <th><input class="form-check-input" type="checkbox"></th>
                                    <th>ID</th>
-                                   <th>Name</th>
+                                   <th>Catégorie</th>
                                    <th>Description</th>
-                                   <th>Slug</th>
-                                   <th>Order</th>
+                                   <th>Nombre de produits</th>
                                    <th>Action</th>
                                  </tr>
                                </thead>
                                <tbody>
+                                 <?php foreach ($rowsd as $key => $rowd) {?>
                                  <tr>
                                    <td><input class="form-check-input" type="checkbox"></td>
-                                   <td>#85462</td>
-                                   <td>Fashion</td>
-                                   <td>Some lorem ipsum</td>
-                                   <td>/fashion</td>
-                                   <td>54</td>
+                                   <td>#<?php echo $rowd['id'] ?></td>
+                                   <td><?php echo $rowd['CATD'] ?></td>
+                                   <td><?php echo $rowd['DESCR'] ?></td>
+                                   <td><?php echo $rowd['produits'] ?></td>
                                    <td>
                                     <div class="d-flex align-items-center gap-3 fs-6">
                                       <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
@@ -99,141 +98,7 @@
                                     </div>
                                    </td>
                                  </tr>
-                                 <tr>
-                                  <td><input class="form-check-input" type="checkbox"></td>
-                                  <td>#63524</td>
-                                  <td>Jeans</td>
-                                  <td>Some lorem ipsum</td>
-                                  <td>/jeans</td>
-                                  <td>24</td>
-                                  <td>
-                                   <div class="d-flex align-items-center gap-3 fs-6">
-                                     <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                                     <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                     <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                                   </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td><input class="form-check-input" type="checkbox"></td>
-                                  <td>#758426</td>
-                                  <td>Shoes</td>
-                                  <td>Some lorem ipsum</td>
-                                  <td>/shoes</td>
-                                  <td>26</td>
-                                  <td>
-                                   <div class="d-flex align-items-center gap-3 fs-6">
-                                     <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                                     <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                     <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                                   </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td><input class="form-check-input" type="checkbox"></td>
-                                  <td>#98653</td>
-                                  <td>Electronics</td>
-                                  <td>Some lorem ipsum</td>
-                                  <td>/electronics</td>
-                                  <td>52</td>
-                                  <td>
-                                   <div class="d-flex align-items-center gap-3 fs-6">
-                                     <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                                     <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                     <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                                   </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td><input class="form-check-input" type="checkbox"></td>
-                                  <td>#85426</td>
-                                  <td>Furniture</td>
-                                  <td>Some lorem ipsum</td>
-                                  <td>/furniture</td>
-                                  <td>14</td>
-                                  <td>
-                                   <div class="d-flex align-items-center gap-3 fs-6">
-                                     <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                                     <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                     <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                                   </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td><input class="form-check-input" type="checkbox"></td>
-                                  <td>#36867</td>
-                                  <td>Mobiles</td>
-                                  <td>Some lorem ipsum</td>
-                                  <td>/mobiles</td>
-                                  <td>40</td>
-                                  <td>
-                                   <div class="d-flex align-items-center gap-3 fs-6">
-                                     <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                                     <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                     <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                                   </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td><input class="form-check-input" type="checkbox"></td>
-                                  <td>#85697</td>
-                                  <td>Women</td>
-                                  <td>Some lorem ipsum</td>
-                                  <td>/women</td>
-                                  <td>75</td>
-                                  <td>
-                                   <div class="d-flex align-items-center gap-3 fs-6">
-                                     <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                                     <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                     <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                                   </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td><input class="form-check-input" type="checkbox"></td>
-                                  <td>#36758</td>
-                                  <td>Kids Cloths</td>
-                                  <td>Some lorem ipsum</td>
-                                  <td>/sids</td>
-                                  <td>25</td>
-                                  <td>
-                                   <div class="d-flex align-items-center gap-3 fs-6">
-                                     <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                                     <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                     <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                                   </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td><input class="form-check-input" type="checkbox"></td>
-                                  <td>#98620</td>
-                                  <td>Sports</td>
-                                  <td>Some lorem ipsum</td>
-                                  <td>/sports</td>
-                                  <td>10</td>
-                                  <td>
-                                   <div class="d-flex align-items-center gap-3 fs-6">
-                                     <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                                     <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                     <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                                   </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td><input class="form-check-input" type="checkbox"></td>
-                                  <td>#84253</td>
-                                  <td>Accessories</td>
-                                  <td>Some lorem ipsum</td>
-                                  <td>/accessories</td>
-                                  <td>12</td>
-                                  <td>
-                                   <div class="d-flex align-items-center gap-3 fs-6">
-                                     <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                                     <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                     <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                                   </div>
-                                  </td>
-                                </tr>
+                                 <?php }?>
                                </tbody>
                              </table>
                           </div>

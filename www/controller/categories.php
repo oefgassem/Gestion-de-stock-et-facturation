@@ -6,12 +6,14 @@ if (!isset($_SESSION['email'])){
 ?>
 <?php
 include("../model/database.php");
-include("../model/product.php");
+include("../model/categories.php");
 
 $data = new connect;
 $db = $data->db_connect();
 
-$products = new produit;
+$categories = new categorie;
+$rows = $categories->categories_get_all($db);
+$rowsd = $categories->categories_get_details($db);
 
 
 ?>
