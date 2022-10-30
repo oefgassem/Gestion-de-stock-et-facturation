@@ -93,7 +93,7 @@
               <ul>
                 <li> <a href="table-basic-table.html"><i class="bi bi-circle"></i>Liste des articles</a>
                 </li>
-                <li> <a href="table-advance-tables.html"><i class="bi bi-circle"></i>Commande client</a>
+                <li> <a href="../../controller/order_add.php"><i class="bi bi-circle"></i>Commande client</a>
                 </li>
                 <li> <a href="table-datatable.html"><i class="bi bi-circle"></i>Liste des commandes clients</a>
                 </li>
