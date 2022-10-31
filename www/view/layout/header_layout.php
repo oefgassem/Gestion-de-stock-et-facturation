@@ -10,6 +10,13 @@
   <link href="../public/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
   <link href="../public/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
   <link href="../public/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+  <link href="../public/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+  <link href="../public/assets/plugins/select2/css/select2.min.css" rel="stylesheet" />
+	<link href="../public/assets/plugins/select2/css/select2-bootstrap4.css" rel="stylesheet" />
+  <link href="../public/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+  <link href="../public/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+  <link href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <link href="../public/assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
   <!-- Bootstrap CSS -->
   <link href="../public/assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../public/assets/css/bootstrap-extended.css" rel="stylesheet" />
