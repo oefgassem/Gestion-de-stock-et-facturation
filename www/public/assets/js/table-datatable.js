@@ -1,15 +1,18 @@
 $(function() {
 	"use strict";
 
-    $(document).ready(function() {
-        $('#example').DataTable();
-      } );
+    // $(document).ready(function() {
+    //     $('#selectclient').DataTable();
+    //   } );
 
 
       $(document).ready(function() {
-        var table = $('#example2').DataTable( {
+        var table = $('#selectclienttable').DataTable( {
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+            },
             lengthChange: false,
-            buttons: [ 'copy', 'excel', 'pdf', 'print']
+            buttons: [ 'Copier', 'Excel', 'pdf', 'Imprimer']
         } );
      
         table.buttons().container()

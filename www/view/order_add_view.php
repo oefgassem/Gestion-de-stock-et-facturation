@@ -49,18 +49,17 @@
                               </div>
                               <div class="info">
                               <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Code client" aria-label="Code client">
+                                <input type="text" id ="cardcode" disabled class="form-control" placeholder="Code client" aria-label="Code client">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#selectclient">Chercher</button>
                                 <button class="btn btn-outline-secondary" type="button">Confirmer</button>
                               </div>
                               <div class="input-group mb-3">
-                                <input class="form-control form-control-sm" type="text" placeholder="Nom du client" aria-label="Nom du client">
+                                <input id ="cardname" disabled class="form-control form-control-sm" type="text" placeholder="Nom du client" aria-label="Nom du client">
                               </div>
                               <div class="input-group mb-3">
-                                <input class="form-control form-control-sm mb-3" type="text" placeholder="Adresse" aria-label="Adresse">
+                                <input id="address" disabled class="form-control form-control-sm mb-3" type="text" placeholder="Adresse" aria-label="Adresse">
                               </div>
-                                <p class="mb-1">+91-9910XXXXXX</p>
-                              </div>
+                            </div>
                            </div>
                            </div>
                          </div>
@@ -291,12 +290,10 @@
 														<h5 class="modal-title" id="exampleModalLabel">Selectionner le client</h5>
 														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 													</div>
-													<h6 class="mb-0 text-uppercase">DataTable Import</h6>
-                          <hr/>
                           <div class="card">
                             <div class="card-body">
                               <div class="table-responsive">
-                                <table id="selectclient" name="selectclient" class="table table-striped table-bordered table-hover">
+                                <table id="selectclienttable" name="selectclient" class="table table-striped table-bordered table-hover">
                                   <thead>
                                     <tr>
                                       <th>#ID</th>
@@ -308,11 +305,11 @@
                                   </thead>
                                   <tbody>
                                   <?php foreach ($clients as $key => $client) { ?>
-                                    <tr>
+                                    <tr class="clickableRow">
                                       <td><?php echo $client['id'] ?></td>
                                       <td><?php echo $client['cardcode'] ?></td>
                                       <td><?php echo $client['partname'] ?></td>
-                                      <td></td>
+                                      <td>XX</td>
                                       <td></td>
                                     </tr>
                                   <?php }?>
@@ -331,8 +328,8 @@
                             </div>
                           </div>
                           <div class="modal-footer">
-														<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-														<button type="button" class="btn btn-primary">Save changes</button>
+														<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+														<button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="selectok">OK</button>
 													</div>
 												</div>
 											</div>
