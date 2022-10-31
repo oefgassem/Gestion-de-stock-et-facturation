@@ -21,12 +21,16 @@
   <script src="../public/assets/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
   <script src="../public/assets/plugins/select2/js/select2.min.js"></script>
   <script src="../public/assets/js/form-select2.js"></script>
+  <script src="../public/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+  <script src="../public/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+  <script src="../public/assets/js/table-datatable.js"></script>
+  <script src="../public/assets/js/custom.js"></script>
   <!--app-->
   <script src="../public/assets/js/app.js"></script>
   <script src="../public/assets/js/index.js"></script>
   <script>
     new PerfectScrollbar(".best-product")
- </script>
+  </script>
 
 
 </body>

@@ -8,12 +8,18 @@ if (!isset($_SESSION['email'])){
 include("../model/database.php");
 include("../model/product.php");
 include("../model/order.php");
+include("../model/bp.php");
+
+
 
 $data = new connect;
 $db = $data->db_connect();
 
 $order = new order;
 $nextid = $order->order_next($db);
+
+$partners = new partner;
+$clients = $partners->client_get_all($db);
 
 ?>
 <?php
