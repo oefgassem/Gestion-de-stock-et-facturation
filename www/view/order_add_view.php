@@ -1,3 +1,5 @@
+<script src="../public/assets/js/bootstrap.bundle.min.js"></script>
+<script src="../public/assets/js/autocomplete.js"></script>
 <!--start content-->
           <main class="page-content">
             <!--breadcrumb-->
@@ -48,10 +50,11 @@
                                 <i class="bi bi-person text-primary"></i>
                               </div>
                               <div class="info">
+                              <h6 class="mb-2">Client</h6>
                               <div class="input-group mb-3">
                                 <input type="text" id ="cardcode" disabled class="form-control" placeholder="Code client" aria-label="Code client">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#selectclient">Chercher</button>
-                                <button class="btn btn-outline-secondary" type="button">Confirmer</button>
+                                
                               </div>
                               <div class="input-group mb-3">
                                 <input id ="cardname" disabled class="form-control form-control-sm" type="text" placeholder="Nom du client" aria-label="Nom du client">
@@ -64,7 +67,7 @@
                            </div>
                          </div>
                        </div>
-                       <div class="col">
+                       <!-- <div class="col">
                         <div class="card border shadow-none radius-10">
                           <div class="card-body">
                             <div class="d-flex align-items-center gap-3">
@@ -80,8 +83,8 @@
                            </div>
                            </div>
                           </div>
-                       </div>
-                      <div class="col">
+                       </div> -->
+                      <!-- <div class="col">
                         <div class="card border shadow-none radius-10">
                           <div class="card-body">
                             <div class="d-flex align-items-center gap-3">
@@ -96,7 +99,7 @@
                             </div>
                           </div>
                          </div>
-                    </div>
+                    </div> -->
                   </div><!--end row-->
 
                   <div class="row">
@@ -104,25 +107,26 @@
                          <div class="card border shadow-none radius-10">
                            <div class="card-body">
                                <div class="table-responsive">
-                                 <table class="table align-middle mb-0">
-                                   <thead class="table-light">
-                                     <tr>
-                                       <th>Product</th>
-                                       <th>Unit Price</th>
-                                       <th>Quantity</th>
-                                       <th>Total</th>
-                                     </tr>
-                                   </thead>
+                               <table class="table table-bordered" id="product_info_table">
+                                <thead>
+                                  <tr>
+                                    <th style="width:50%">Produit</th>
+                                    <th style="width:10%">Prix untaire</th>
+                                    <th style="width:10%">Quantité</th>
+                                    <th style="width:20%">Prix total</th>
+                                    <th style="width:10%"><button type="button" id="add_row" class="btn btn-primary"><i class="fa fa-plus">Ajouter ligne</i></button></th>
+                                  </tr>
+                                </thead>
                                    <tbody>
                                      <tr>
                                        <td>
                                          <div class="orderlist">
                                           <a class="d-flex align-items-center gap-2" href="javascript:;">
                                             <div class="product-box">
-                                                <img src="https://via.placeholder.com/400X300" alt="">
+                                                <img src="https://via.placeholder.com/400X300" hidden alt="">
                                             </div>
                                             <div>
-                                                <P class="mb-0 product-title">Men White Polo T-shirt</P>
+                                                <input type="text" name="selectproduct" id="selectproduct" placeholder="Sélectionner un produit" class="form-control actions" required>
                                             </div>
                                            </a>
                                          </div>
@@ -336,3 +340,12 @@
 										</div>
           </main>
        <!--end page main-->
+
+       <script>
+        var auto_complete = new Autocomplete(document.getElementById('selectproduct'), {
+            data:<?php echo json_encode($productssearcha); ?>,
+            maximumItems:10,
+            highlightTyped:true,
+            highlightClass : 'fw-bold text-primary'
+        }); 
+       </script>

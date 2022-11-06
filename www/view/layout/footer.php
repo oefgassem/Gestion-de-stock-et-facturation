@@ -26,6 +26,7 @@
   <script src="../public/assets/js/table-datatable.js"></script>
   <script src="../public/assets/js/custom.js"></script>
   <script src="//cdn.datatables.net/plug-ins/1.12.1/i18n/fr-FR.json"></script>
+  <script src="../public/assets/js/vanilla.js"></script>
   <!--app-->
   <script src="../public/assets/js/app.js"></script>
   <script src="../public/assets/js/index.js"></script>

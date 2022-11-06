@@ -21,6 +21,17 @@ $nextid = $order->order_next($db);
 $partners = new partner;
 $clients = $partners->client_get_all($db);
 
+$products = new produit;
+$productssearch = $products->produit_get_all($db);
+
+$productssearcha = array();
+foreach ($productssearch as $row) {
+    $productssearcha[] = array(
+        'label' => $row['prodname'],
+        'value' => $row['id']
+    );
+};
+
 ?>
 <?php
     include("../view/layout/header_layout.php");

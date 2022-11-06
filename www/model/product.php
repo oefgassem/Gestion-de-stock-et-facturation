@@ -37,6 +37,14 @@ class produit
         return $row;
     }
 
+    public function product_get_by_name($db, $prodname)
+    {
+        $sql = "SELECT prodname FROM PROD";
+        $requete->execute();
+        $rows = $requete->fetchAll();
+        return $rows;
+    }
+
 }
 
 ?>
