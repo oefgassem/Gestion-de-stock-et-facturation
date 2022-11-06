@@ -20,4 +20,3 @@ $('#selectok').click(function() {
     document.getElementById("cardname").value=cardname;
     document.getElementById("address").value=address;
 })
-  
