@@ -10,7 +10,7 @@ include("../model/product.php");
 include("../model/order.php");
 include("../model/bp.php");
 
-
+$selectedname=$GET['selectproduct'];
 
 $data = new connect;
 $db = $data->db_connect();

@@ -39,10 +39,12 @@ class produit
 
     public function product_get_by_name($db, $prodname)
     {
-        $sql = "SELECT prodname FROM PROD";
+        $sql = "SELECT * FROM PROD WHERE prodname=:prodname";
+        $requete = $db->prepare($sql);
+        $requete->bindValue(':prodname', $prodname);
         $requete->execute();
-        $rows = $requete->fetchAll();
-        return $rows;
+        $row = $requete->fetch(PDO::FETCH_ASSOC);
+        return $row;
     }
 
 }

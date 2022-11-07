@@ -17,6 +17,9 @@
   <link href="../public/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
   <link href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
   <link href="../public/assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+  <link href="../public/assets/css/app2.css" rel="stylesheet" />
+  <link href="../public/assets/css/style2.css" rel="stylesheet" />
+
   <!-- Bootstrap CSS -->
   <link href="../public/assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../public/assets/css/bootstrap-extended.css" rel="stylesheet" />
