@@ -150,8 +150,9 @@
                             <div class="input-group mb-3">
                                 <form action="" id="form1" method="get">
                                     <input type="text" name="selectproduct" id="selectproduct" placeholder="Sélectionner un produit" class="form-control actions">
+                                    <input type="text" name="selectqty" id="selectqty" placeholder="Quantité" class="form-control actions">
                                     <!-- <input type="submit" value="Ajouter" class="btn btn-primary"> -->
-                                    <button id="selectproductbtn" name="selectproductbtn" type="button" form="form1" class="btn btn-primary" onlick="addItem()">Ajouter</button>
+                                    <button id="selectproductbtn" name="selectproductbtn" type="button" form="form1" class="btn btn-primary">Ajouter</button>
                                 </form>
                             </div>
                             <div class="row">

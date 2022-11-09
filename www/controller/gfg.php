@@ -2,6 +2,7 @@
   
 // Get the user id 
 $prodname = $_REQUEST['prodname'];
+$selectqty = $_REQUEST['qty'];
   
 // Database connection
 include("../model/database.php");
@@ -23,7 +24,7 @@ if ($id !== "") {
 };
   
 // Store it in a array
-$result = array("$prodcode", "$prodname", "$prodimg", "$price");
+$result = array("$prodcode", "$prodname", "$prodimg", "$price", "$selectqty");
   
 // Send in JSON encoded form
 $myJSON = json_encode($result);

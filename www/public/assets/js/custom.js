@@ -29,6 +29,7 @@ $('#selectproductbtn').click(function() {
       // Defines a function to be called when
       // the readyState property changes
       var str = document.getElementById('selectproduct').value;
+      var qty = document.getElementById('selectqty').value;
       if (this.readyState == 4 && 
               this.status == 200) {
             
@@ -37,15 +38,15 @@ $('#selectproductbtn').click(function() {
           var myObj = JSON.parse(this.responseText);
           if (myObj[0]!=null) {
             var html ="<tr>";
-            html += "<td class='productimgname'>";
+            html += "<td class='productimgname' style='height:120px'>";
             html += "<a class='product-img'>";
-            html += "<img src='assets/img/product/product7.jpg' alt='product'>";
+            html += "<img src='../public/img/products/"+myObj[2]+"' alt='product' style='max-height:100%'>";
             html += "</a>";
             html += "<a>"+myObj[1]+"</a>";
             html += "</td>";
-            html += "<td>10.00</td>";
-            html += "<td id='price'>2000.00</td>";
-            html += "<td class='text-end'>2000.00</td>";
+            html += "<td>"+myObj[4]+"</td>";
+            html += "<td id='price'>"+myObj[3]+"</td>";
+            html += "<td class='text-end'>"+myObj[4]*myObj[3]+"</td>";
             html += "<td>";
             html += "<a class='delete-set'><img src='../public/assets/images/delete.svg' alt='svg'></a>";
             html += "</td>";
@@ -58,7 +59,7 @@ $('#selectproductbtn').click(function() {
   };
 
   // xhttp.open("GET", "filename", true);
-  xmlhttp.open("GET", "../../../controller/gfg.php?prodname=" + document.getElementById('selectproduct').value, true);
+  xmlhttp.open("GET", "../../../controller/gfg.php?prodname=" + document.getElementById('selectproduct').value+"&qty=" + document.getElementById('selectqty').value, true);
     
   // Sends the request to the server
   xmlhttp.send();
