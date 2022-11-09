@@ -20,11 +20,12 @@ if ($id !== "") {
     $prodname = $row["prodname"];
     $prodimg = $row["prodimg"];
     $price = $row["price"];
+    $prodid = $row["id"];
 
 };
   
 // Store it in a array
-$result = array("$prodcode", "$prodname", "$prodimg", "$price", "$selectqty");
+$result = array("$prodcode", "$prodname", "$prodimg", "$price", "$selectqty", "$prodid");
   
 // Send in JSON encoded form
 $myJSON = json_encode($result);

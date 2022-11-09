@@ -9,6 +9,7 @@ let address;
 for (var i = 0; i < trs.length; i++)
   (function (e) {
     trs[e].addEventListener("click", function () {
+        part_id=this.querySelectorAll("*")[0].innerHTML.trim();
         cardcode=this.querySelectorAll("*")[1].innerHTML.trim();
         cardname=this.querySelectorAll("*")[2].innerHTML.trim();
         address=this.querySelectorAll("*")[3].innerHTML.trim();
@@ -16,6 +17,7 @@ for (var i = 0; i < trs.length; i++)
   })(i);
 
 $('#selectok').click(function() {
+    document.getElementById("part_id").value=part_id;
     document.getElementById("cardcode").value=cardcode;
     document.getElementById("cardname").value=cardname;
     document.getElementById("address").value=address;
@@ -38,21 +40,34 @@ $('#selectproductbtn').click(function() {
           var myObj = JSON.parse(this.responseText);
           if (myObj[0]!=null) {
             var html ="<tr>";
+            html += "<td><input type='text' name='prod_id[]' value='"+myObj[5]+"' hidden/></td>";
             html += "<td class='productimgname' style='height:120px'>";
             html += "<a class='product-img'>";
             html += "<img src='../public/img/products/"+myObj[2]+"' alt='product' style='max-height:100%'>";
             html += "</a>";
-            html += "<a>"+myObj[1]+"</a>";
+            html += "<td><input type='text' name='prodname[]' value='"+myObj[1]+"'/></td>";
             html += "</td>";
-            html += "<td>"+myObj[4]+"</td>";
-            html += "<td id='price'>"+myObj[3]+"</td>";
-            html += "<td class='text-end'>"+myObj[4]*myObj[3]+"</td>";
+            html += "<td><input type='text' name='qty[]' value='"+myObj[4]+"'/></td>";
+            html += "<td><input type='text' name='unitval[]' value='"+myObj[3]+"'/></td>";
+            html += "<td><input type='text' id='linetotal' name='linetotal[]' value='"+myObj[4]*myObj[3]+"'/></td>";
             html += "<td>";
             html += "<a class='delete-set'><img src='../public/assets/images/delete.svg' alt='svg'></a>";
             html += "</td>";
             html += "</tr>";
 
             document.getElementById("tbody").insertRow().innerHTML = html;
+
+            var sum_total_data = 0;
+            var table = document.getElementById("tablearticle");
+            
+            for(var i = 1; i < table.rows.length; i++)
+            {
+              sum_total_data = sum_total_data + parseFloat(table.rows[i].cells[6].value);
+
+            };
+            document.getElementById('totaldata').value = sum_total_data;
+     
+            
           }
           
       }
