@@ -13,7 +13,7 @@ class order
 
     public function order_next($db)
     {
-        $sql = "SELECT CASE WHEN LEFT(DocNum,4)=CONCAT(RIGHT(YEAR(CURDATE()),2), LPAD(MONTH(CURDATE()),2,\"0\")) THEN DocNum+1 ELSE CONCAT(RIGHT(YEAR(CURDATE()),2), LPAD(MONTH(CURDATE()),2,\"0\"), '000001') END as \"docnumber\" FROM ORDR ORDER BY DocNum DESC;";
+        $sql = "SELECT IFNULL((SELECT CASE WHEN LEFT(DocNum,4)=CONCAT(RIGHT(YEAR(CURDATE()),2), LPAD(MONTH(CURDATE()),2,\"0\")) THEN DocNum+1 ELSE CONCAT(RIGHT(YEAR(CURDATE()),2), LPAD(MONTH(CURDATE()),2,\"0\"), '000001') END as \"docnumber\" FROM ORDR ORDER BY DocNum DESC), CONCAT(RIGHT(YEAR(CURDATE()),2), LPAD(MONTH(CURDATE()),2,\"0\"), '000001')) as \"docnumber\";";
         $requete = $db->prepare($sql);
         $requete->execute();
         $row = $requete->fetch(PDO::FETCH_ASSOC);
@@ -33,13 +33,35 @@ class order
 
         $requete->execute();
 
-        echo "\nPDOStatement::errorInfo():\n";
-        $arr = $requete->errorInfo();
-        print_r($arr);
+        // echo "\nPDOStatement::errorInfo():\n";
+        // $arr = $requete->errorInfo();
+        // print_r($arr);
 
 
         return $requete;  
 
+    }
+
+    // public function order_insert_lines($db, $order_id, $linenum, $prod_id, $prodname, $qty, $unitval, $direction, $warehouse_id, $linetotal)
+    public function order_insert_lines($db, $row)
+    {
+        $sql = "INSERT INTO RDR1 (order_id, linenum, prod_id, prodname, qty, unitval, direction, warehouse_id, linetotal)
+        VALUES (:order_id, :linenum, :prod_id, :prodname, :qty, :unitval, :direction, :warehouse_id, :linetotal);";
+        $requete = $db->prepare($sql);
+        // $requete->bindValue(':order_id', $order_id);
+        // $requete->bindValue(':linenum', $linenum);
+        // $requete->bindValue(':prod_id', $prod_id);
+        // $requete->bindValue(':prodname', $prodname);
+        // $requete->bindValue(':qty', $qty);
+        // $requete->bindValue(':unitval', $unitval);
+        // $requete->bindValue(':direction', $direction);
+        // $requete->bindValue(':warehouse_id', $warehouse_id);
+        // $requete->bindValue(':linetotal', $linetotal);
+        $requete->execute($row);
+        echo "\nPDOStatement::errorInfo():\n";
+        $arr = $requete->errorInfo();
+        print_r($arr);
+        return $requete;
     }
 }
 

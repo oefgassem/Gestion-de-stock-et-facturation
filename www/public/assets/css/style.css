@@ -1780,6 +1780,35 @@ a {
 	background-color:yellow;
 }
 
+td {
+	position: relative;
+}
+  
+input[type="text"]
+{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	resize: none;
+  
+	/* for full width without spacing */
+	width: 100%;
+	border: none;
+	/* for full width without spacing */
+  
+	/* for column with internal spacing */
+	/*
+	width: 85%;
+	padding: 0.3rem;
+	margin: 0.2rem 0.5rem;
+	border: 1px solid #ddd;
+	*/
+	/* for column with internal spacing */
+}
+  
+  
 
 
   

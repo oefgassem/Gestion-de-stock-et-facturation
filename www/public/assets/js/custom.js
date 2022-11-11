@@ -40,16 +40,16 @@ $('#selectproductbtn').click(function() {
           var myObj = JSON.parse(this.responseText);
           if (myObj[0]!=null) {
             var html ="<tr>";
-            html += "<td><input type='text' name='prod_id[]' value='"+myObj[5]+"' hidden/></td>";
+            html += "<td><input class='form-control' type='text' name='prod_id[]' value='"+myObj[5]+"' hidden/></td>";
             html += "<td class='productimgname' style='height:120px'>";
             html += "<a class='product-img'>";
             html += "<img src='../public/img/products/"+myObj[2]+"' alt='product' style='max-height:100%'>";
             html += "</a>";
-            html += "<td><input type='text' name='prodname[]' value='"+myObj[1]+"'/></td>";
+            html += "<td><input readonly type='text' class='form-control' name='prodname[]' value='"+myObj[1]+"'/></td>";
             html += "</td>";
-            html += "<td><input type='text' name='qty[]' value='"+myObj[4]+"'/></td>";
-            html += "<td><input type='text' name='unitval[]' value='"+myObj[3]+"'/></td>";
-            html += "<td><input type='text' id='linetotal' name='linetotal[]' value='"+myObj[4]*myObj[3]+"'/></td>";
+            html += "<td><input readonly class='form-control' type='text' name='qty[]' value='"+myObj[4]+"'/></td>";
+            html += "<td><input readonly class='form-control' type='text' name='unitval[]' value='"+myObj[3]+"'/></td>";
+            html += "<td><input readonly class='form-control linetotal' type='text' id='linetotal' name='linetotal[]' value='"+myObj[4]*myObj[3]+"'/></td>";
             html += "<td>";
             html += "<a class='delete-set'><img src='../public/assets/images/delete.svg' alt='svg'></a>";
             html += "</td>";
@@ -57,15 +57,11 @@ $('#selectproductbtn').click(function() {
 
             document.getElementById("tbody").insertRow().innerHTML = html;
 
-            var sum_total_data = 0;
-            var table = document.getElementById("tablearticle");
-            
-            for(var i = 1; i < table.rows.length; i++)
-            {
-              sum_total_data = sum_total_data + parseFloat(table.rows[i].cells[6].value);
-
-            };
-            document.getElementById('totaldata').value = sum_total_data;
+            var tamount = 0;
+            $('input[name="linetotal[]"]').each(function() {
+              tamount += parseInt(($(this).val() ? $(this).val() : 0));
+            });
+            document.getElementById('totaldata').value = tamount;
      
             
           }

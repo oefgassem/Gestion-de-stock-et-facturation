@@ -198,39 +198,23 @@
                                             <p class="mb-0">Total HT</p>
                                         </div>
                                         <div class="ms-auto">
-                                            <input type="text" id="totaldata" name="totaldata" value="">
+                                            <input readonly class='form-control' type="text" id="totaldata" name="totaldata" value="">
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-center mb-3">
                                         <div>
-                                            <p class="mb-0">Shipping Price</p>
+                                            <p class="mb-0">TVA</p>
                                         </div>
                                         <div class="ms-auto">
-                                            <h5 class="mb-0">$0.00</h5>
+                                            <input readonly class='form-control' type="text" id="tva" name="tva" value="">
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-center mb-3">
                                         <div>
-                                            <p class="mb-0">Taxes</p>
+                                            <p class="mb-0">TTC</p>
                                         </div>
                                         <div class="ms-auto">
-                                            <h5 class="mb-0">$24.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div>
-                                            <p class="mb-0">Payment Fee</p>
-                                        </div>
-                                        <div class="ms-auto">
-                                            <h5 class="mb-0">$14.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div>
-                                            <p class="mb-0">Discount</p>
-                                        </div>
-                                        <div class="ms-auto">
-                                            <h5 class="mb-0 text-danger">-$36.00</h5>
+                                            <input readonly class='form-control' type="text" id="ttc" name="ttc" value="">
                                         </div>
                                     </div>
                                 </div>

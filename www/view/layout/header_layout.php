@@ -24,7 +24,7 @@
   <link href="../public/assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../public/assets/css/bootstrap-extended.css" rel="stylesheet" />
   <link href="../public/assets/css/style.css" rel="stylesheet" />
-  <link href="../public/assets/css/icons.css" rel="stylesheet">
+  <link href="../public/assets/css/icons.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   
