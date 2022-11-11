@@ -32,11 +32,9 @@
                   <div class="row align-items-center m-0">
                     <div class="col-md-3 col-12 me-auto mb-md-0 mb-3">
                         <select class="form-select">
-                            <option>All category</option>
-                            <option>Fashion</option>
-                            <option>Electronics</option>
-                            <option>Furniture</option>
-                            <option>Sports</option>
+                          <?php foreach ($categories as $key => $categorie) {?>
+                          <option value="<?php echo $categorie['id'] ?>"><?php echo $categorie['CATD'] ?></option>
+                          <?php } ?>
                         </select>
                     </div>
                     <div class="col-md-2 col-6">

@@ -13,7 +13,7 @@ class order
 
     public function order_next($db)
     {
-        $sql = "SELECT IFNULL((SELECT CASE WHEN LEFT(DocNum,4)=CONCAT(RIGHT(YEAR(CURDATE()),2), LPAD(MONTH(CURDATE()),2,\"0\")) THEN DocNum+1 ELSE CONCAT(RIGHT(YEAR(CURDATE()),2), LPAD(MONTH(CURDATE()),2,\"0\"), '000001') END as \"docnumber\" FROM ORDR ORDER BY DocNum DESC), CONCAT(RIGHT(YEAR(CURDATE()),2), LPAD(MONTH(CURDATE()),2,\"0\"), '000001')) as \"docnumber\";";
+        $sql = "SELECT IFNULL((SELECT CASE WHEN LEFT(DocNum,4)=CONCAT(RIGHT(YEAR(CURDATE()),2), LPAD(MONTH(CURDATE()),2,\"0\")) THEN DocNum+1 ELSE CONCAT(RIGHT(YEAR(CURDATE()),2), LPAD(MONTH(CURDATE()),2,\"0\"), '000001') END as \"docnumber\" FROM ORDR ORDER BY DocNum DESC LIMIT 1), CONCAT(RIGHT(YEAR(CURDATE()),2), LPAD(MONTH(CURDATE()),2,\"0\"), '000001')) as \"docnumber\";";
         $requete = $db->prepare($sql);
         $requete->execute();
         $row = $requete->fetch(PDO::FETCH_ASSOC);

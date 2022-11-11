@@ -41,7 +41,7 @@ $('#selectproductbtn').click(function() {
           if (myObj[0]!=null) {
             var html ="<tr>";
             html += "<td><input class='form-control' type='text' name='prod_id[]' value='"+myObj[5]+"' hidden/></td>";
-            html += "<td class='productimgname' style='height:120px'>";
+            html += "<td class='productimgname' style='height:60px'>";
             html += "<a class='product-img'>";
             html += "<img src='../public/img/products/"+myObj[2]+"' alt='product' style='max-height:100%'>";
             html += "</a>";

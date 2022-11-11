@@ -3,9 +3,7 @@
     $prodname=$_POST["prodname"];
     $proddesc=$_POST["proddesc"];
     $prodimg=$_POST["prodimg"];
-    // $prodimg="";
-    // $prodcat=$_POST["prodcat"];
-    $prodcat=1;
+    $prodcat=$_POST["catid"];
     $price=$_POST["price"];
 
     include("../model/database.php");

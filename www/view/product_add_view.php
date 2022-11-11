@@ -58,12 +58,11 @@
                         </div>
                         <div class="col-12">
                           <label class="form-label">Category</label>
-                          <select class="form-select">
-                            <option>Fashion</option>
-                            <option>Electronics</option>
-                            <option>Furniture</option>
-                            <option>Sports</option>
-                          </select>
+                          <select class="form-select" name="catid">
+                            <?php foreach ($categories as $key => $categorie) {?>
+                            <option value="<?php echo $categorie['id'] ?>"><?php echo $categorie['CATD'] ?></option>
+                            <?php } ?>
+                        </select>
                         </div>
                         <div class="col-12">
                           <label class="form-label">Price</label>
