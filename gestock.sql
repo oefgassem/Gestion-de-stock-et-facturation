@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : lun. 31 oct. 2022 à 21:24
--- Version du serveur : 8.0.30
+-- Généré le : ven. 11 nov. 2022 à 22:09
+-- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -79,7 +79,10 @@ CREATE TABLE `OCRD` (
 
 INSERT INTO `OCRD` (`id`, `partname`, `parttype`, `cardcode`) VALUES
 (1, 'Client test', 'C', 'C22000001'),
-(2, 'Vecopharm', 'C', 'C22000002');
+(2, 'Vecopharm', 'C', 'C22000002'),
+(3, 'Farouk', 'C', 'C22000003'),
+(4, 'Adem Gassem', 'C', 'C22000004'),
+(5, 'Meryem', 'C', 'C22000005');
 
 -- --------------------------------------------------------
 
@@ -95,11 +98,23 @@ CREATE TABLE `ORDR` (
   `CANCELED` varchar(1) NOT NULL,
   `DocStatus` varchar(1) NOT NULL,
   `part_id` int NOT NULL,
-  `part_name` int NOT NULL,
+  `part_name` varchar(200) NOT NULL,
   `Totalvalue` float NOT NULL,
   `VAT` float NOT NULL,
   `DocTotal` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Déchargement des données de la table `ORDR`
+--
+
+INSERT INTO `ORDR` (`id`, `DocNum`, `DocDate`, `DocType`, `CANCELED`, `DocStatus`, `part_id`, `part_name`, `Totalvalue`, `VAT`, `DocTotal`) VALUES
+(18, '2211000001', '2022-11-11', 1, 'N', 'O', 1, 'Client test', 12000, 0, 12000),
+(19, '2211000002', '2022-11-11', 1, 'N', 'O', 2, 'Vecopharm', 36000, 0, 36000),
+(20, '2211000003', '2022-11-11', 1, 'N', 'O', 2, 'Vecopharm', 30000, 0, 30000),
+(21, '2211000004', '2022-11-11', 1, 'N', 'O', 3, 'Farouk', 16000, 0, 16000),
+(22, '2211000005', '2022-11-11', 1, 'N', 'O', 4, 'Adem Gassem', 40000, 0, 40000),
+(23, '2211000006', '2022-11-11', 1, 'N', 'O', 5, 'Meryem', 16000, 0, 16000);
 
 -- --------------------------------------------------------
 
@@ -160,7 +175,9 @@ INSERT INTO `PROD` (`id`, `prodcode`, `prodname`, `proddesc`, `prodimg`, `prodca
 (18, 'ART000014', 'qqqqqqqqqqqqqqqqq', 'qqqqqqqqqqqqqqq', 'ART000014', 7, '8000.00'),
 (19, 'ART000015', 'Mimi2', 'ssssss', 'ART000015', 7, '9000.00'),
 (20, 'ART000016', 'Mimi23', 'qqqqqqq', 'ART000016', 7, '8000.00'),
-(21, 'ART000017', 'qqqqqqqqqq', 'qqqqqqqq', 'ART000017', 1, '8000.00');
+(21, 'ART000017', 'qqqqqqqqqq', 'qqqqqqqq', 'ART000017', 1, '8000.00'),
+(22, 'ART000018', 'TEST5', 'sss', 'ART000018', 6, '1200.00'),
+(23, 'ART000019', 'fffffffff', '', 'ART000019', 14, '6.00');
 
 -- --------------------------------------------------------
 
@@ -176,8 +193,24 @@ CREATE TABLE `RDR1` (
   `qty` float NOT NULL,
   `unitval` float NOT NULL,
   `direction` int NOT NULL,
-  `warehouse_id` int NOT NULL
+  `warehouse_id` int NOT NULL,
+  `linetotal` float NOT NULL,
+  `order_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Déchargement des données de la table `RDR1`
+--
+
+INSERT INTO `RDR1` (`id`, `linenum`, `prod_id`, `prodname`, `qty`, `unitval`, `direction`, `warehouse_id`, `linetotal`, `order_id`) VALUES
+(4, 1, 6, 'qsdqsd', 2, 6000, 0, 1, 12000, 18),
+(5, 1, 6, 'qsdqsd', 2, 6000, 0, 1, 12000, 19),
+(6, 2, 6, 'qsdqsd', 2, 6000, 0, 1, 12000, 19),
+(7, 3, 6, 'qsdqsd', 2, 6000, 0, 1, 12000, 19),
+(8, 1, 6, 'qsdqsd', 5, 6000, 0, 1, 30000, 20),
+(9, 1, 20, 'Mimi23', 2, 8000, 0, 1, 16000, 21),
+(10, 1, 2, 'Article 2', 5, 8000, 0, 1, 40000, 22),
+(11, 1, 20, 'Mimi23', 2, 8000, 0, 1, 16000, 23);
 
 -- --------------------------------------------------------
 
@@ -286,13 +319,13 @@ ALTER TABLE `CATG`
 -- AUTO_INCREMENT pour la table `OCRD`
 --
 ALTER TABLE `OCRD`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `ORDR`
 --
 ALTER TABLE `ORDR`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT pour la table `OSTK`
@@ -304,7 +337,13 @@ ALTER TABLE `OSTK`
 -- AUTO_INCREMENT pour la table `PROD`
 --
 ALTER TABLE `PROD`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT pour la table `RDR1`
+--
+ALTER TABLE `RDR1`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `USER`
