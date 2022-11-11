@@ -50,7 +50,7 @@
         $requete = $db->prepare($sql);
 
     foreach ($items as $item) {
-        var_dump($item);
+        // var_dump($item);
         $requete->execute($item);
     }
     // var_dump($neworder);
@@ -64,9 +64,9 @@
     // var_dump($qtys);
     // var_dump($unitvals);
     // var_dump($linetotals);
-    var_dump($items);
+    // var_dump($items);
 
-    // header("location:product_list.php");
+    header("location:order_list.php");
 
     
 

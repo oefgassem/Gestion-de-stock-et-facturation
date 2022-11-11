@@ -5,7 +5,7 @@
               <img src="../public/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
             </div>
             <div>
-              <h4 class="logo-text">Stock DZ</h4>
+              <h4 class="logo-text">INFO TECH</h4>
             </div>
             <div class="toggle-icon ms-auto"> <i class="bi bi-list"></i>
             </div>
@@ -46,11 +46,11 @@
                 <div class="menu-title">Opérations de stock</div>
               </a>
               <ul>
-                <li> <a href="ecommerce-products-list.html"><i class="bi bi-circle"></i>Entrée en stock</a>
+                <li> <a href="../../controller/entree_add.php"><i class="bi bi-circle"></i>Entrée en stock</a>
                 </li>
                 <li> <a href="ecommerce-orders.html"><i class="bi bi-circle"></i>Transfert de stock</a>
                 </li>
-                <li> <a href="ecommerce-orders-detail.html"><i class="bi bi-circle"></i>Sortie de stock - Livraison</a>
+                <li> <a href="../../controller/sortie_list.php"><i class="bi bi-circle"></i>Sortie de stock - Livraison</a>
                 </li>
                 <li> <a href="ecommerce-add-new-product.html"><i class="bi bi-circle"></i>Sortie de stock - Régule</a>
                 </li>
@@ -76,9 +76,9 @@
                 <div class="menu-title">Clients</div>
               </a>
               <ul>
-                <li> <a href="form-elements.html"><i class="bi bi-circle"></i>Afficher/Créer client</a>
+                <li> <a href="../../controller/customer_add.php"><i class="bi bi-circle"></i>Afficher/Créer client</a>
                 </li>
-                <li> <a href="form-input-group.html"><i class="bi bi-circle"></i>Liste des clients</a>
+                <li> <a href="../../controller/customer_list.php"><i class="bi bi-circle"></i>Liste des clients</a>
                 </li>
                 <li> <a href="form-layouts.html"><i class="bi bi-circle"></i>Groupes de clients</a>
                 </li>

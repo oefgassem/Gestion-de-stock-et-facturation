@@ -1,27 +1,9 @@
 <?php
 
-class order
+class stock
 {
 
-    public function order_get_all($db)
-    {
-        $requete = $db->prepare('select * from ORDR');
-        $requete->execute();
-        $rows = $requete->fetchAll();
-        return $rows;
-    }
-
-    public function order_get_by_id($db, $id)
-    {
-        $requete = $db->prepare('select * from ORDR where id = :id');
-        $requete->bindValue(':id', $id);
-        $requete->execute();
-        $row = $requete->fetch(PDO::FETCH_ASSOC);
-        return $row;
-
-    }
-
-    public function order_next($db)
+    public function stock_next($db)
     {
         $sql = "SELECT IFNULL((SELECT CASE WHEN LEFT(DocNum,4)=CONCAT(RIGHT(YEAR(CURDATE()),2), LPAD(MONTH(CURDATE()),2,\"0\")) THEN DocNum+1 ELSE CONCAT(RIGHT(YEAR(CURDATE()),2), LPAD(MONTH(CURDATE()),2,\"0\"), '000001') END as \"docnumber\" FROM ORDR ORDER BY DocNum DESC LIMIT 1), CONCAT(RIGHT(YEAR(CURDATE()),2), LPAD(MONTH(CURDATE()),2,\"0\"), '000001')) as \"docnumber\";";
         $requete = $db->prepare($sql);
